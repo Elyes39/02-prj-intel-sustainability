@@ -1,3 +1,7 @@
+/* Intel Font Family */
+body {
+	font-family: 'Intel Clear', 'Segoe UI', Arial, sans-serif;
+}
 /* Hide details by default, show on hover */
 .details {
 	opacity: 0;
