@@ -45,17 +45,17 @@ header p {
 
 /* Timeline Section Styles */
 section {
-	display: flex;
-	flex-direction: row;
-	align-items: flex-start;
-	gap: 24px;
-	margin: 40px 0 20px 0;
-	overflow-x: auto;
-	padding-bottom: 20px;
-	scrollbar-width: thin;
-	scrollbar-color: #0071C5 #eee;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 24px;
+  margin: 40px 0 20px 0;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  scrollbar-width: thin;
+  scrollbar-color: #0071C5 #eee;
+  scroll-snap-type: x mandatory;
 }
-
 section div {
 	background: #fff;
 	border-radius: 12px;
@@ -63,17 +63,30 @@ section div {
 	padding: 28px 20px 22px 20px;
 	min-width: 320px;
 	max-width: 400px;
+	/* Removed image height constraint from card container */
+	/* Timeline Card Images: keep all images the same height */
+	img {
+		width: 100%;
+		max-height: 180px;
+		object-fit: cover;
+		border-radius: 8px;
+		margin-bottom: 10px;
+		display: block;
+	}
 	text-align: left;
-	transition: transform 0.2s, box-shadow 0.2s;
+	transition: transform 0.3s cubic-bezier(.25,.8,.25,1), box-shadow 0.3s cubic-bezier(.25,.8,.25,1);
 	position: relative;
 	flex: 0 0 auto;
 	border-left: 6px solid #0071C5;
 	margin-bottom: 8px;
+	scroll-snap-align: start;
+	display: block; /* Ensure images are displayed as block elements */
 }
 
 section div:hover {
-	transform: scale(1.03);
-	box-shadow: 0 4px 16px rgba(0,113,197,0.15);
+	transform: scale(1.06) rotate(-1deg);
+	box-shadow: 0 8px 32px rgba(0,113,197,0.18), 0 1.5px 8px rgba(0,0,0,0.08);
+	z-index: 2;
 }
 
 section h2 {
